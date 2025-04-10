@@ -8,7 +8,7 @@ import HomeScreen from "../screens/HomeScreen";
 import SignInScreen from '../screens/SignInScreen';
 import EmployerScreen from '../screens/EmployerScreen';
 import ProfilWScreen from "../screens/ProfilWScreen";
-import ExperienceScreen from "../screens/ExperienceScreen";
+
 
 
 const Tab = createBottomTabNavigator();

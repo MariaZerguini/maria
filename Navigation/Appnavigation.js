@@ -17,7 +17,7 @@ import SummaryScreen from "../screens/SummaryScreen";
 import HomeScreen from "../screens/HomeScreen";
 import Tabnavigator from "./Tabnavigator";
 import ExperienceScreen from "../screens/ExperienceScreen";
-
+import AddExperienceScreen from "../screens/AddExperienceScreen";
 
 
 const Stack =createNativeStackNavigator();
@@ -40,6 +40,9 @@ export default function Appnavigation(){
         <Stack.Screen name="Summary" component={SummaryScreen} options={{headerShown: false}}/>
         <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}}/>
         <Stack.Screen name="exp" component={ExperienceScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="addexp" component={AddExperienceScreen} options={{headerShown: false}}/>
+
+
 
         <Stack.Screen name='Main' component={Tabnavigator} options={{ headerShown: false }} /> 
        
