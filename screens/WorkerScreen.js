@@ -60,7 +60,7 @@ const WorkerScreen = () => {
       {/* صورة البروفايل */}
       <TouchableOpacity onPress={pickImage} style={styles.profileContainer}>
         <Image
-          source={image ? { uri: image } : require("../assets/image/welcome.jpg")}
+          source={image ? { uri: image } : require("../assets/image/17.jpg")}
           style={styles.avatar}
         />
         <TouchableOpacity onPress={pickImage} style={styles.editIcon}>
@@ -162,7 +162,7 @@ const WorkerScreen = () => {
       <TouchableOpacity
   style={[
     styles.nextButton,
-    { backgroundColor: isFormComplete ? "#001F73" : "#ccc" },
+    { backgroundColor: isFormComplete ? "#000080" : "#ccc" },
   ]}
   disabled={!isFormComplete}
   onPress={() => navigation.navigate("Main")}
