@@ -236,9 +236,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SummaryScreen
-
-
-
-
-
+export default SummaryScreen;

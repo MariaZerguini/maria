@@ -26,10 +26,7 @@ const CreatjobScreen = () => {
         <>
           {/* زر الرجوع والعنوان */}
           <View style={styles.header}>
-          <TouchableOpacity onPress={() => navigation.navigate("Employer")} style={styles.backButton}>
-  <Ionicons name="arrow-back" size={28} color="black" />
-</TouchableOpacity>
-
+          
             <Text style={styles.title}>Create Job</Text>
           </View>
   

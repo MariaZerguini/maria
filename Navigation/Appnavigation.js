@@ -1,5 +1,4 @@
-import { View ,Text} from "react-native";
-import React,{useState} from "react";
+import React from "react";
 import {NavigationContainer} from'@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SplashScreen from "../screens/SplashScreen"; 
@@ -18,6 +17,12 @@ import HomeScreen from "../screens/HomeScreen";
 import Tabnavigator from "./Tabnavigator";
 import ExperienceScreen from "../screens/ExperienceScreen";
 import AddExperienceScreen from "../screens/AddExperienceScreen";
+import FormationScreen from "../screens/FormationScreen";
+import AddFormationScreen from "../screens/AddFormationScreen";
+import SettingsScreen from "../screens/SettingsScreen";
+import ProfileEScreen from "../screens/ProfileEScreen"
+import QuickServiceScreen from "../screens/QuickServiceScreen";
+import SaveScreen from "../screens/SaveScreen";
 
 
 const Stack =createNativeStackNavigator();
@@ -41,6 +46,13 @@ export default function Appnavigation(){
         <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}}/>
         <Stack.Screen name="exp" component={ExperienceScreen} options={{headerShown: false}}/>
         <Stack.Screen name="addexp" component={AddExperienceScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="forma" component={FormationScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="addFormation" component={AddFormationScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="Settingworker" component={SettingsScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="ProfileE" component={ProfileEScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="service" component={QuickServiceScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="save" component={SaveScreen} options={{headerShown: false}}/>
+
 
 
 

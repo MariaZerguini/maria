@@ -5,9 +5,13 @@ import Feather from '@expo/vector-icons/Feather';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { StyleSheet, View } from 'react-native';
 import HomeScreen from "../screens/HomeScreen";
-import SignInScreen from '../screens/SignInScreen';
-import EmployerScreen from '../screens/EmployerScreen';
 import ProfilWScreen from "../screens/ProfilWScreen";
+import ProfileEScreen from "../screens/ProfileEScreen";
+import QuickServiceScreen from "../screens/QuickServiceScreen";
+import SaveScreen from "../screens/SaveScreen";
+
+
+
 
 
 
@@ -27,7 +31,7 @@ function Tabnavigator() {
                         icon = <Feather name="home" size={22} color={focused ? "#000080" : "#000"} />;
                     } else if (route.name === 'Saved') {
                         icon = <FontAwesome6 name="bookmark" size={22} color={focused ? "#000080" : "#000"} />;
-                    } else if (route.name === 'Trucking') {
+                    } else if (route.name === 'service') {
                         
                         icon = (
                           <Feather name="users" size={22} color={focused ? "#000080" : "#000"} />
@@ -47,9 +51,9 @@ function Tabnavigator() {
             })}
         >
             <Tab.Screen name="Home" component={HomeScreen} />
-            <Tab.Screen name="Saved" component={SignInScreen} />
-            <Tab.Screen name="Trucking" component={EmployerScreen} />
-            <Tab.Screen name="Profile" component={ProfilWScreen} />
+            <Tab.Screen name="Saved" component={SaveScreen} />
+            <Tab.Screen name="service" component={QuickServiceScreen} />
+            <Tab.Screen name="Profile" component={ProfileEScreen} />
         </Tab.Navigator>
     );
 }
@@ -81,6 +85,7 @@ const styles = StyleSheet.create({
         borderRadius: 1,
         marginTop: 3,
     },
+
 });
 
 export default Tabnavigator;

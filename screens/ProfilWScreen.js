@@ -46,6 +46,14 @@ const ProfilWScreen = () => {
 
   return (
     <View style={styles.container}>
+      {/* زر الإعدادات */}
+      <TouchableOpacity
+        style={styles.settingsButton}
+        onPress={() => navigation.navigate("Settingworker")}
+      >
+        <Ionicons name="settings-outline" size={28} color="black" />
+      </TouchableOpacity>
+
       {/* صورة البروفايل */}
       <TouchableOpacity onPress={pickImage} style={styles.profileContainer}>
         <Image
@@ -165,7 +173,7 @@ const ProfilWScreen = () => {
       {/* حقل formation */}
       <View style={styles.rowInput}>
         <Text style={styles.labelText}>formation</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("FormationScreen")}>
+        <TouchableOpacity onPress={() => navigation.navigate("forma")}>
           <Text style={styles.addLink}>Voir</Text>
         </TouchableOpacity>
       </View>
@@ -180,6 +188,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#fff",
     paddingTop: 80,
+  },
+  settingsButton: {
+    position: "absolute",
+    top: 40,
+    right: 20,
+    zIndex: 1,
   },
   profileContainer: {
     alignItems: "center",

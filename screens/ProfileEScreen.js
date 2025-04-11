@@ -10,12 +10,12 @@ import {
   ScrollView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import * as ImagePicker from "expo-image-picker";
 import { Ionicons } from "@expo/vector-icons";
+import * as ImagePicker from "expo-image-picker";
 import * as Location from "expo-location";
 import MapView, { Marker } from "react-native-maps";
 
-const EmployerScreen = () => {
+const ProfileEScreen = () => {
   const navigation = useNavigation();
   const [profile, setProfile] = useState({
     CompanyName: "",
@@ -71,15 +71,20 @@ const EmployerScreen = () => {
           <Ionicons name="arrow-back" size={24} color="black" />
         </TouchableOpacity>
 
+        {/* أيقونة الإعدادات في أعلى اليمين */}
+        <TouchableOpacity
+          style={styles.settingsButton}
+          onPress={() => navigation.navigate("Settingworker")} // هنا تقوم بتوجيه المستخدم إلى صفحة الإعدادات
+        >
+          <Ionicons name="settings" size={24} color="black" />
+        </TouchableOpacity>
+
         {/* صورة الشركة */}
         <TouchableOpacity onPress={pickImage} style={styles.profileContainer}>
           <Image
             source={image ? { uri: image } : require("../assets/image/17.jpg")}
             style={styles.avatar}
           />
-          <TouchableOpacity onPress={pickImage} style={styles.editIcon}>
-            <Ionicons name="camera" size={18} color="black" />
-          </TouchableOpacity>
         </TouchableOpacity>
 
         {/* الحقول */}
@@ -184,14 +189,13 @@ const EmployerScreen = () => {
           </View>
         </Modal>
 
-        {/* زر Next */}
-        <TouchableOpacity
-          style={[styles.nextButton, { backgroundColor: isFormComplete ? "#001F73" : "#ccc" }]}
-          disabled={!isFormComplete}
-          onPress={() => navigation.navigate("Creatjob")}
-        >
-          <Text style={styles.nextText}>Next</Text>
-        </TouchableOpacity>
+        {/* حقل الوظائف +Post Job */}
+        <View style={styles.rowInput}>
+          <Text style={styles.labelText}>+ Post Job</Text>
+          <TouchableOpacity onPress={() => navigation.navigate("Creatjob")}>
+            <Text style={styles.addLink}>Add</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </ScrollView>
   );
@@ -208,9 +212,15 @@ const styles = StyleSheet.create({
     padding: 10,
     zIndex: 1,
   },
+  settingsButton: {
+    position: "absolute",
+    top: 40,
+    right: 20,
+    padding: 10,
+    zIndex: 1,
+  },
   profileContainer: { alignItems: "center", marginBottom: 20 },
   avatar: { width: 100, height: 100, borderRadius: 50 },
-  editIcon: { position: "absolute", bottom: 0, right: 0, backgroundColor: "#fff", borderRadius: 15, padding: 5 },
   input: { width: "80%", padding: 15, borderWidth: 1, borderColor: "#ccc", borderRadius: 10, marginBottom: 10, textAlign: "center" },
   placeholderText: { color: "gray" },
   genderButton: {
@@ -238,20 +248,31 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 16,
   },
-  nextButton: {
-    padding: 15,
-    borderRadius: 10,
-    marginTop: 10,
-    width: "80%",
-    alignItems: "center",
-    position: "absolute",
-    bottom: 20,
-  },
-  nextText: { color: "white", fontSize: 18, fontWeight: "bold" },
   mapContainer: { flex: 1 },
   map: { flex: 1 },
   okButton: { padding: 15, backgroundColor: "#001F73", alignItems: "center" },
   okButtonText: { color: "white", fontSize: 18, fontWeight: "bold" },
+  rowInput: {
+    width: "80%",
+    padding: 15,
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 10,
+    marginBottom: 10,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "#fff",
+  },
+  labelText: {
+    color: "gray",
+    fontSize: 16,
+  },
+  addLink: {
+    color: "#007BFF",
+    fontWeight: "bold",
+    fontSize: 16,
+  },
 });
 
-export default EmployerScreen;   
+export default ProfileEScreen;
